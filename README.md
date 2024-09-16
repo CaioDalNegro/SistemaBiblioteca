@@ -1,4 +1,4 @@
-# Sistema de Gestão de Biblioteca 📚
+# Sistema de Biblioteca 📚
 
 ## Descrição do Projeto
 O **Sistema de Gestão de Biblioteca** é um projeto desenvolvido em Java com o objetivo de informatizar o gerenciamento de uma biblioteca. O sistema permite o cadastro de livros e usuários, a realização de empréstimos e devoluções, além de oferecer a listagem de livros disponíveis. Este projeto faz uso dos conceitos de Programação Orientada a Objetos (POO) e boas práticas de desenvolvimento de software.
