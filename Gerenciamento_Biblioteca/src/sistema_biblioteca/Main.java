@@ -1,5 +1,7 @@
 package sistema_biblioteca;
 
+import java.io.FileWriter;
+import java.io.IOException;
 import java.util.Scanner;
 
 public class Main {
@@ -76,6 +78,7 @@ public class Main {
 				System.out.print("Digite o número de registro do usuário: ");
 				String numeroRegistro = scan.nextLine();//Scan lê o numero de registro
 				biblioteca.emprestarLivro(isbn, numeroRegistro);//chama o método para emprestar livro
+				
 				
 			//Devolver Livro------------------------------------------------------------------------>
 			} else if (menu == 6) {

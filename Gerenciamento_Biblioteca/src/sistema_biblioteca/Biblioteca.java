@@ -1,5 +1,8 @@
 package sistema_biblioteca;
 
+import java.io.BufferedWriter;
+import java.io.FileWriter;
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -67,14 +70,26 @@ public class Biblioteca {
 	public void emprestarLivro(String isbn, String numeroRegistro) {
 		Livro livro = encontrarLivro(isbn);//encontra livro pelo isbn
 		Usuario usuario = encontrarUsuario(numeroRegistro);//encontra usuario pelo numero de registro
+		String path = "C:\\Users\\Aluno\\Desktop\\Emprestimo.csv";
 		
-			if (livro.isDisponibilidade()) {//se livro estiver disponivel
+			if (livro != null && livro.isDisponibilidade()) {//se livro estiver disponivel ou diferente de null
 				livro.setDisponibilidade(false);//muda disponivel para false(emprestado)
 				usuario.adicionarLivroEmprestado(livro);//adiciona livro
 				System.out.println("Livro emprestado com sucesso!");
 			} else {
 				System.out.println("O livro não está disponível.");
 			}
+			
+			try(BufferedWriter bw = new BufferedWriter(new FileWriter(path))){
+				bw.write(numeroRegistro + "," + isbn);
+				bw.newLine();
+				System.out.println("Não Houve nenhum erro ao realizar o emprestimo");
+				
+			} catch (IOException e) {
+				e.printStackTrace();
+				System.out.println("Erro para realizar o emprestimo");
+			}
+
 	}
 	
 	//devolver livro--------------------------------------->
@@ -82,12 +97,13 @@ public class Biblioteca {
 		Livro livro = encontrarLivro(isbn);//livro busca pelo isbn
 		Usuario usuario = encontrarUsuario(numeroRegistro);//usuario busca pelo numero de registro
 
-			if (!livro.isDisponibilidade()) {//se livro for diferente de disponivel
+			if (livro != null && livro.isDisponibilidade()) {//se livro for diferente de disponivel
 				livro.setDisponibilidade(true);//define como true(disponivel)
 				usuario.removerLivroEmprestado(livro);//remove livro do usuario
 				System.out.println("Livro devolvido com sucesso!");
 			} else {
 				System.out.println("O livro já está disponível.");
-			}
+			}	
 	}
+	
 }
