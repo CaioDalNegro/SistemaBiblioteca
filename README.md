@@ -12,6 +12,9 @@ O **Sistema de Biblioteca** é um projeto desenvolvido em Java com o objetivo de
 - ❌ **Remoção de Livros**: Remova livros do sistema quando necessário.
 - ✔️ **Validação de Disponibilidade**: Verifique automaticamente se um livro está disponível para empréstimo.
 
+- ## Armazenamento de Dados
+Para gerenciar informações sobre empréstimos, usuários e livros, o sistema utiliza arquivos CSV como se fossem bancos de dados. O uso da classe `Writer` permite armazenar essas informações de forma eficiente, garantindo que dados como empréstimos, usuários e uma lista de livros sejam gravados de forma estruturada.
+
 ## Tecnologias Utilizadas
 - **Linguagem de Programação**: Java
 - **IDE**: Eclipse;
