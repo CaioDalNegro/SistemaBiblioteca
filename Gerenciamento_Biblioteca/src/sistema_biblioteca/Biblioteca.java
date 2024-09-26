@@ -70,7 +70,7 @@ public class Biblioteca {
 	public void emprestarLivro(String isbn, String numeroRegistro) {
 		Livro livro = encontrarLivro(isbn);//encontra livro pelo isbn
 		Usuario usuario = encontrarUsuario(numeroRegistro);//encontra usuario pelo numero de registro
-		String path = "C:\\Users\\Aluno\\Desktop\\Emprestimo.csv";
+		String path = "C:\\Users\\Aluno\\Documents\\SistemaBiblioteca\\Gerenciamento_Biblioteca\\Arquivos_CSV\\Emprestimos.csv";
 		
 			if (livro != null && livro.isDisponibilidade()) {//se livro estiver disponivel ou diferente de null
 				livro.setDisponibilidade(false);//muda disponivel para false(emprestado)
