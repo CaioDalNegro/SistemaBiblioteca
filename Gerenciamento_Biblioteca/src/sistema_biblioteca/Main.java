@@ -33,16 +33,19 @@ public class Main {
                 System.out.print("Digite o ISBN do livro: ");
                 String isbn = scan.nextLine();
                 Livro livro = new Livro(titulo, autor, isbn, true);
-                biblioteca.cadastrarLivro(livro);
+                biblioteca.registrarLivroNoCSV(livro);
                 System.out.println("Livro inserido com sucesso!");
+                
             } else if (menu == 2) { // Remover Livro
                 System.out.print("Digite o ISBN do livro a ser removido: ");
                 String isbn = scan.nextLine();
                 boolean removido = biblioteca.removerLivro(isbn);
                 System.out.println(removido ? "Livro removido com sucesso!" : "Livro não encontrado!");
+                
             } else if (menu == 3) { // Listar Livros Disponíveis
                 System.out.println("Livros disponíveis:");
                 biblioteca.exibirLivrosDisponiveis();
+                
             } else if (menu == 4) { // Cadastrar Usuário
                 System.out.print("Digite o nome do usuário: ");
                 String nome = scan.nextLine();
@@ -51,18 +54,21 @@ public class Main {
                 Usuario usuario = new Usuario(nome, numeroRegistro);
                 biblioteca.cadastrarUsuario(usuario);
                 System.out.println("Usuário cadastrado com sucesso!");
+                
             } else if (menu == 5) { // Emprestar Livro
                 System.out.print("Digite o ISBN do livro a ser emprestado: ");
                 String isbn = scan.nextLine();
                 System.out.print("Digite o número de registro do usuário: ");
                 String numeroRegistro = scan.nextLine();
                 biblioteca.emprestarLivro(isbn, numeroRegistro);
+                
             } else if (menu == 6) { // Devolver Livro
                 System.out.print("Digite o ISBN do livro a ser devolvido: ");
                 String isbn = scan.nextLine();
                 System.out.print("Digite o número de registro do usuário: ");
                 String numeroRegistro = scan.nextLine();
                 biblioteca.devolverLivro(isbn, numeroRegistro);
+                
             } else if (menu != 0) { // Opção inválida
                 System.out.println("Opção inválida!");
             }
